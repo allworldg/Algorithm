@@ -18,11 +18,13 @@ public class Utils {
         return arr;
     }
 
+
+
     /**
      * 用于将其他位置的值插入到指定地方
      * @param arr
-     * @param a
-     * @param b
+     * @param a 需要插入的目标位置
+     * @param b 要移动的下标
      * @return 改变后的数组
      */
     static int[] insert(int arr[], int a, int b) {
@@ -35,6 +37,10 @@ public class Utils {
         return arr;
     }
 
+    /**
+     * 循环打印数组的每个值
+     * @param arr
+     */
     static void printout(int[] arr){
         for(int i=0;i<arr.length;i++){
             System.out.println(arr[i]);
