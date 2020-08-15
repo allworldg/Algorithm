@@ -10,12 +10,19 @@ public class Main {
     static int[] quick_sort(int[] arr, int l, int r) {
         if (l < r) {
             int m = partition(arr, l, r);
-            quick_sort(arr, l, m);
+            quick_sort(arr, l, m-1);
             quick_sort(arr, m + 1, r);
         }
         return arr;
     }
 
+    /**
+     * 对数组进行分区
+     * @param arr
+     * @param l
+     * @param r
+     * @return 返回枢纽位置，方便快速排序使用
+     */
     static int partition(int[] arr, int l, int r) {
         int p = arr[l];//开始的枢纽
         int m = l;  //开始的s1 s2为空
