@@ -1,4 +1,6 @@
-
+/**
+ * 随机快速排序，每次随机找到枢纽，然后替换到数组的开头，再进行分区
+ */
 public class Main {
     public static void main(String[] args) {
         int arr[]={3,44,38,5,47,15,36,26,27,2,46,4,19,50,48};
@@ -7,6 +9,13 @@ public class Main {
 
     }
 
+    /**
+     * 对数组进行随机快速排序
+     * @param arr
+     * @param l
+     * @param r
+     * @return
+     */
     static int[] Random_quickSort(int arr[],int l,int r){
         if(l<r){
             int m = partition(arr,l,r);
@@ -16,6 +25,13 @@ public class Main {
         return arr;
     }
 
+    /**
+     *
+     * @param arr
+     * @param l
+     * @param r
+     * @return
+     */
     static int partition(int arr[],int l,int r){
         int m = l;//起始s1 s2为空
         int n = (int)Math.floor(Math.random()*(r-l+1))+l;//随机下标作为枢纽位置
