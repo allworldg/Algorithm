@@ -1,33 +1,40 @@
-
+import javax.print.attribute.standard.ReferenceUriSchemesSupported;
 
 public class Main {
     public static void main(String[] args) {
-        int arr[] = {2, 3, 8, 7, 1, 2, 2, 2, 7, 3, 9, 8, 2, 1, 4, 2, 4, 6, 9, 2};
+        int arr[] = {101,109,107,103,108,102,103,110,107,103};
         arr = count_sort(arr);
         Utils.printout(arr);
     }
 
 
-
-    static int[] count_sort(int[] arr){
+    static int[] count_sort(int[] arr) {
         int max = Integer.MIN_VALUE;
-        for(int num : arr){
-            max = Math.max(max,num);//获得最大值
+        int min = Integer.MAX_VALUE;
+        for (int num : arr) {
+            max = Math.max(max, num);//获得最大值
+        }
+        for (int num : arr) {
+            min = Math.min(min, num);//获得最小值
         }
 
-        int[] count = new int[max+1];
-        for(int num : arr){
-            count[num]++;   //count计数组中每个数字出现的次数，数字大小作为下标，值为次数
+        int[] count = new int[max-min+1];
+
+        for(int num:arr){
+            count[num-min]++;//count数组计数
         }
 
-        int[] results = new int[arr.length];
-        int index = 0;
-        for(int i = 0; i<count.length ; i++){
-            while(count[i]>0){
-                results[index++] = i;
-                count[i]--;
-            }
+        for(int i=1 ; i<count.length;i++){
+            count[i] = count[i-1]+count[i];//计数变形，新元素的值是前面元素的累加和
         }
-        return results;
-  }
+
+        int[] result = new int[arr.length];
+
+        for(int j = 0 ; j<arr.length;j++){
+            result[count[arr[j]-min]-1] = arr[j];
+            count[arr[j]-min]--;
+        }
+        return result;
+
+    }
 }

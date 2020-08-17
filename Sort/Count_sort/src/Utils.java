@@ -58,6 +58,7 @@ public class Utils {
         for(int i=0;i<arr.length;i++){
             System.out.println(arr[i]);
         }
+        System.out.println(arr.length);
     }
 
     static void printout(Object[] arr){
