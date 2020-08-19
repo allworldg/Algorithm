@@ -24,7 +24,7 @@ public class Main {
                 if (j == 0 || i == 0 || j == i) {//杨辉三角特性
                     arr[i][j]=1;
                 }else{
-                    arr[i][j] = arr[i-1][j-1]+arr[i-1][j];
+                    arr[i][j] = arr[i-1][j-1]+arr[i-1][j];//杨辉三角特性
                 }
                 System.out.print(arr[i][j]+"\t");
             }
