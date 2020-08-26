@@ -21,7 +21,6 @@ public class Main {
      * @param n
      */
     static void allSort(int[] arr, int n) {
-        int temp;
         if (n == arr.length - 1) {//已经到最后一位数，递归结束，打印
             for (int i : arr) {
                 System.out.print(i);
