@@ -6,6 +6,35 @@
  */
 public class Main {
     public static void main(String[] args) {
+        int num = 2019;
+        int count = 0;
+        int k;
+        for (int i = 1; i <= num; i++) {
+            if (!exist(String.valueOf(i))) {
+                for (int j = i + 1; j <= num; j++) {
+                    if(!exist(String.valueOf(j))){
+                        k = num-i-j;
+                        if(k>j&&!exist(String.valueOf(k))){
+                            count++;
+                        }
+                    }
+                }
+            }
 
+        }
+        System.out.println(count);
+    }
+
+    /**
+     * 检查是否出现2或4
+     *
+     * @param s
+     * @return
+     */
+    public static boolean exist(String s) {
+        if (s.indexOf("2") != -1 || s.indexOf("4") != -1) {
+            return true;
+        }
+        return false;
     }
 }
