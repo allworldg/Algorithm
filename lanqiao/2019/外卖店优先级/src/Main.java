@@ -21,7 +21,6 @@ public class Main {
         for(int i=1;i<=M;i++){
             int t = scanner.nextInt();
             int m = scanner.nextInt();
-
             a[m][t]++;
         }
 
