@@ -13,8 +13,6 @@ public class Main {
     public static void main(String[] args) {
         int[] arr = {1,2,3,2};
         allSort(arr,0);
-
-
     }
 
     /**
@@ -46,9 +44,16 @@ public class Main {
         arr[j] = temp; //交换位置
     }
 
+    /**
+     * 如果排列中有重复的元素，则检索到重复的可以跳过这一次递归。
+     * @param array
+     * @param start
+     * @param end
+     * @return
+     */
     private static boolean swapAccepted(int[] array, int start, int end) {
         for (int i = start; i < end; i++) {
-            if (array[i] == array[end]) {
+            if (array[i] == array[end]) {//因为重复，说明之前相同的元素已经排在第一位进行全排列。
                 return false;
             }
         }
