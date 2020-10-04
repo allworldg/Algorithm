@@ -1,9 +1,11 @@
+package 数组;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.regex.Pattern;
 
 /**
- * @Classname 两个数组的交集
+ * @Classname 数组.两个数组的交集
  * @Description TODO
  * @Date 2020/10/2 9:21
  * @Created by 94493

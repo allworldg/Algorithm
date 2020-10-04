@@ -1,8 +1,10 @@
+package 数组;
+
 import java.nio.channels.InterruptedByTimeoutException;
 import java.util.HashSet;
 
 /**
- * @Classname 存在重复元素
+ * @Classname 数组.存在重复元素
  * @Description TODO
  * @Date 2020/10/1 21:11
  * @Created by 94493
