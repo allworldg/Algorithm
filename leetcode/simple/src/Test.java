@@ -6,7 +6,9 @@
  */
 public class Test {
     public static void main(String[] args) {
-        System.out.println('z'-0);
-        System.out.println('Z'-0);
+       String sb = "123";
+       StringBuffer stringBuffer = new StringBuffer(sb);
+       stringBuffer.append(3).append(1);
+        System.out.println(stringBuffer.toString());
     }
 }

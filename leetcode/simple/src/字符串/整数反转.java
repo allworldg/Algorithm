@@ -19,10 +19,10 @@ public class 整数反转 {
         while(x!=0){
             int remainder = x%10;//求出每一位数字
             x=x/10;
-            if(number>Integer.MAX_VALUE/10||(number==Integer.MAX_VALUE/10&&remainder==Integer.MAX_VALUE-number)){
+            if(number>Integer.MAX_VALUE/10||(number==Integer.MAX_VALUE/10&&remainder>Integer.MAX_VALUE-number)){
                 return 0;
             }
-            if(number<Integer.MIN_VALUE/10||(number==Integer.MIN_VALUE/10&&remainder==Integer.MIN_VALUE-number)){
+            if(number<Integer.MIN_VALUE/10||(number==Integer.MIN_VALUE/10&&remainder<Integer.MIN_VALUE-number)){
                 return 0;
             }
             number = number*10+remainder;
