@@ -74,7 +74,8 @@ public class Main {
         dfs1(x, y + 1);
         dfs1(x, y - 1);
     }
-
+/**
+第二次查询有几个岛屿 */
     public static void dfs2(int x, int y) {
         if (x < 1 || x > N || y < 1 || y > N) {
             return;

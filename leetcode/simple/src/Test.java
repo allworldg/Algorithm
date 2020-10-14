@@ -1,3 +1,5 @@
+import java.math.BigInteger;
+
 /**
  * @Classname Test
  * @Description TODO
@@ -6,9 +8,7 @@
  */
 public class Test {
     public static void main(String[] args) {
-       String sb = "123";
-       StringBuffer stringBuffer = new StringBuffer(sb);
-       stringBuffer.append(3).append(1);
-        System.out.println(stringBuffer.toString());
+        int a = 2;
+        System.out.println(Integer.toBinaryString(a));
     }
 }

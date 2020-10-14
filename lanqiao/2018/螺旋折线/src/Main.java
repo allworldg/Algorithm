@@ -23,7 +23,7 @@ public class Main {
             distance = 8 * m + m * (m - 1) * 8 / 2+(x+n+y+n);
         }
         System.out.println(distance);
-
+        
     }
 }
 

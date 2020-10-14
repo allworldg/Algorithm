@@ -15,7 +15,7 @@ public class 买卖股票 {
         int price =0;
         for(int i=0;i<prices.length-1;i++){
             if(prices[i]<prices[i+1]){
-                price+=prices[i]-prices[i+1];
+                price+=prices[i+1]-prices[i];
             }
         }
         return price;
