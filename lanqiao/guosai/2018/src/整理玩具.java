@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class 整理玩具 {
     public static char[][] maps;
-    public static int[][] visited;//map上的点是否被访问过，访问过就记下属于哪个连通分量
+    public static boolean[][] visited;//map上的点是否被访问过，访问过就记下属于哪个连通分量
     public static int[] appear1;//第一次地图初始化的时候记录每个数字出现的次数，下标是数字，值为次数
     public static int[] appear2;//一次dfs遍历地图后数字出现的次数
     public static int[] dx = {1, -1, 0, 0};
@@ -21,7 +21,7 @@ public class 整理玩具 {
             int N = scanner.nextInt();
             int M = scanner.nextInt();
             maps = new char[N][M];
-            visited = new int[N][M];
+            visited = new boolean[N][M];
             appear1 = new int[10];
             appear2 = new int[10];
            for(int i=0;i<N;i++){
@@ -42,13 +42,12 @@ public class 整理玩具 {
     }
 
     public static boolean check() {
-        int t = 0;
         for (int i = 0; i < maps.length; i++) {
             for (int j = 0; j < maps[i].length; j++) {
                 if (appear2[maps[i][j] - '0'] == 0) {//当前数字没有被访问过
                     max_x = -1;
                     max_y = -1;
-                    dfs(i, j, ++t);//开始dfs，顺便传一个连通分量进去
+                    dfs(i, j);//开始dfs，顺便传一个连通分量进去
                     int count1 = appear1[maps[i][j] - '0'];
                     int count2 = appear2[maps[i][j] - '0'];
 
@@ -69,17 +68,17 @@ public class 整理玩具 {
         return true;
     }
 
-    public static void dfs(int x, int y, int t) {
+    public static void dfs(int x, int y) {
         max_x = Math.max(x, max_x);
         max_y = Math.max(y, max_y);
-        visited[x][y] = t;//赋予相同的连通分量；
+        visited[x][y] = true;//该点访问过
         appear2[maps[x][y] - '0']++;//遍历中记录该数字出现的次数
         for (int i = 0; i < dx.length; i++) {
             int u = x + dx[i];
             int v = y + dy[i];
-            if (u >= 0 && u <= maps.length - 1 && v >= 0 && v <= maps[u].length - 1 && visited[u][v] == 0 && maps[max_x][max_y] == maps[u][v]) {
+            if (u >= 0 && u <= maps.length - 1 && v >= 0 && v <= maps[u].length - 1 && visited[u][v] == false && maps[max_x][max_y] == maps[u][v]) {
                 {
-                    dfs(u, v, t);
+                    dfs(u, v);
                 }
             }
         }
