@@ -11,7 +11,7 @@ public class 约瑟夫问题 {
 
     /**
      * n个人，m号 out
-     *递推公式  f（n，m） = f(f(n-1,m)+3)%n
+     *递推公式  f（n，m） = f(f(n-1,m)+m)%n
      * @param n
      * @param m
      * @return 胜利者的下标(从0开始 ）
@@ -19,7 +19,7 @@ public class 约瑟夫问题 {
     public static int solve(int n, int m) {
         int p =0;
         for(int i=2;i<=n;i++){
-            p = (p+m)%i;
+            p = (p+m)%i;    //i是当前轮活着的人数
         }
         return p;
     }
